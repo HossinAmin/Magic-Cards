@@ -1,8 +1,8 @@
-# Magic Card
+# Magic Cards
 
 Welcome to the **Magic Card** React application repository! This project is a card-matching game inspired by the Net Ninja's React.js and Firebase course. You can use this repository to explore the source code, contribute, or run the game on your local machine.
 
-![image](https://github.com/HossinAmin/Magic-Cards/assets/69393843/d6bf64a9-a147-4301-8582-2de8f1359ba2)
+![image](https://github.com/HossinAmin/Magic-Cards/assets/69393843/4acdca13-f505-4578-ba3f-efe38e2c2410)
 
 
 ## Table of Contents
