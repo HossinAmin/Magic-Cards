@@ -1,0 +1,10 @@
+.show-flip {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+}
+
+.hidde-flip {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.2s;
+  transition-deplay: 0.2s;
+}
