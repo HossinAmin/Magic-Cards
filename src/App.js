@@ -14,6 +14,7 @@ function App() {
   const [numTurns, setNumTurns] = useState(null);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+
   const newGame = () => {
     // suffles card deck
     const suffledCards = [...cardImages, ...cardImages]
@@ -27,6 +28,7 @@ function App() {
 
     setNumTurns(0);
   };
+
   const handelChoice = (card) => {
     // save selection
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
@@ -45,6 +47,7 @@ function App() {
       );
     }
   };
+
   const resetChoices = () => {
     setTimeout(() => {
       setChoiceOne(null);
@@ -61,10 +64,12 @@ function App() {
       resetChoices();
     }
   }, [choiceOne, choiceTwo]);
+
   return (
     <div className="flex flex-col justify-start items-center bg-purple-900 h-screen">
-      <h1 className="text-center m-0">Magic card Game</h1>
+      <h1 className="text-center m-0">Magic Card Game</h1>
       <button onClick={newGame}>Start New Game</button>
+
       <div className="card-deck flex flex-wrap gap-[25px] items-center w-[375px] my-[15px]">
         {cards.map((card) => {
           return (
@@ -78,7 +83,8 @@ function App() {
           );
         })}
       </div>
-      {numTurns != null && <p>{numTurns} Turns Made </p>}
+
+      <h3>{numTurns != null && <span>{numTurns} Turns Made </span>}</h3>
     </div>
   );
 }
