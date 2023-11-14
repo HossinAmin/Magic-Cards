@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import "./styles/main.css";
 import SingleCard from "./components/SingleCard";
+
 const cardImages = [
   { src: "/img/potion-1.png", matched: false },
   { src: "/img/helmet-1.png", matched: false },
@@ -66,9 +68,14 @@ function App() {
   }, [choiceOne, choiceTwo]);
 
   return (
-    <div className="flex flex-col justify-start items-center bg-purple-900 h-screen">
-      <h1 className="text-center m-0">Magic Card Game</h1>
-      <button onClick={newGame}>Start New Game</button>
+    <div className="flex flex-col justify-start items-center gap-2 bg-purple-900 h-screen">
+      <h1 className="title-text my-6">Magic Card Game</h1>
+      <button
+        className="bg-white drop-shadow-lg rounded-md p-2 hover:opacity-80 active:opacity-95"
+        onClick={newGame}
+      >
+        Start New Game
+      </button>
 
       <div className="card-deck flex flex-wrap gap-[25px] items-center w-[375px] my-[15px]">
         {cards.map((card) => {
@@ -84,7 +91,9 @@ function App() {
         })}
       </div>
 
-      <h3>{numTurns != null && <span>{numTurns} Turns Made </span>}</h3>
+      <h3 className="text-white">
+        {numTurns != null && <span>{numTurns} Turns Made </span>}
+      </h3>
     </div>
   );
 }
