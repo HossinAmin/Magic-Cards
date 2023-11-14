@@ -36,36 +36,35 @@ function App() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
-  const compareCards = () => {
-    if (choiceOne.src === choiceTwo.src) {
-      // found a match
-      setCards(
-        cards.map((item) => {
-          if (item.src === choiceOne.src) {
-            item.matched = true;
-          }
-          return item;
-        })
-      );
-    }
-  };
-
-  const resetChoices = () => {
-    setTimeout(() => {
-      setChoiceOne(null);
-      setChoiceTwo(null);
-    }, 1000);
-
-    setNumTurns((prevState) => prevState + 1);
-  };
-
   useEffect(() => {
+    const compareCards = () => {
+      if (choiceOne.src === choiceTwo.src) {
+        // found a match
+        setCards(
+          cards.map((item) => {
+            if (item.src === choiceOne.src) {
+              item.matched = true;
+            }
+            return item;
+          })
+        );
+      }
+    };
+
+    const resetChoices = () => {
+      setTimeout(() => {
+        setChoiceOne(null);
+        setChoiceTwo(null);
+      }, 1000);
+
+      setNumTurns((prevState) => prevState + 1);
+    };
     // check two cards are selected
     if (choiceOne && choiceTwo) {
       compareCards();
       resetChoices();
     }
-  }, [choiceOne, choiceTwo]);
+  }, [choiceOne, choiceTwo, cards]);
 
   return (
     <div className="flex flex-col justify-start items-center gap-2 bg-purple-900 h-screen">
