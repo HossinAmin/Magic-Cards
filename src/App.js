@@ -70,10 +70,7 @@ function App() {
   return (
     <div className="flex flex-col justify-start items-center gap-2 bg-purple-900 h-screen">
       <h1 className="title-text my-6">Magic Card Game</h1>
-      <button
-        className="bg-white drop-shadow-lg rounded-md p-2 hover:opacity-80 active:opacity-95"
-        onClick={newGame}
-      >
+      <button className="primary-button" onClick={newGame}>
         Start New Game
       </button>
 
